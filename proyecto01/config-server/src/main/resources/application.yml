@@ -7,5 +7,5 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/caitoVilas/curso-microservicios-kafka/tree/main/proyecto01
+          uri: https://github.com/caitoVilas/curso-microservicios-kafka
           clone-on-start: true
