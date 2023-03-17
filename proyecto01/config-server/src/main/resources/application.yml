@@ -1,0 +1,11 @@
+server:
+  port: 8085
+spring:
+  application:
+    name: CONFIG-SERVER
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/caitoVilas/curso-microservicios-kafka/tree/main/proyecto01
+          clone-on-start: true
