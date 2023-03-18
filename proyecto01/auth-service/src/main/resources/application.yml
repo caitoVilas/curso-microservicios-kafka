@@ -1,0 +1,21 @@
+server:
+  port: 8086
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/microservicios?serverTimezone=UTC&useSSL=false
+    username: root
+    password:
+    driver: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  application:
+    name: AUTH-SERVICE
+  config:
+    import: optional:configserver:http://localhost:8088
+jwt:
+  secret: secretsecret
