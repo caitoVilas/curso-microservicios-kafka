@@ -1,6 +1,8 @@
 package com.caito.authservice.service;
 
 import com.caito.authservice.dto.AuthUserDTO;
+import com.caito.authservice.dto.NewUserDTO;
+import com.caito.authservice.dto.RequestDTO;
 import com.caito.authservice.dto.TokenDTO;
 import com.caito.authservice.entity.AuthUser;
 import com.caito.authservice.repository.AuthUserRepository;
@@ -20,13 +22,14 @@ public class AuthService {
     @Autowired
     private JwtProvider jwtProvider;
 
-    public AuthUser create(AuthUserDTO dto){
+    public AuthUser create(NewUserDTO dto){
         Optional<AuthUser> user = authUserRepository.findByUsername(dto.getUsername());
         if (user.isPresent())
             return null;
         AuthUser authUser = new AuthUser();
         authUser.setUsername(dto.getUsername());
         authUser.setPassword(passwordEncoder.encode(dto.getPassword()));
+        authUser.setRole(dto.getRole());
         return authUserRepository.save(authUser);
     }
 
@@ -40,8 +43,8 @@ public class AuthService {
         return null;
     }
 
-    public TokenDTO validate(String token){
-        if (!jwtProvider.validate(token))
+    public TokenDTO validate(String token, RequestDTO requestDTO){
+        if (!jwtProvider.validate(token, requestDTO))
             return null;
         String username = jwtProvider.getUsernameFromToken(token);
         if (!authUserRepository.findByUsername(username).isPresent())
