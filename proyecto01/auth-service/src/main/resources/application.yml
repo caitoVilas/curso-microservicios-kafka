@@ -18,4 +18,9 @@ spring:
   config:
     import: optional:configserver:http://localhost:8088
 jwt:
-  secret: secretsecret
+  secret: pibw78bczBvPIfcD7imr2QjfJnh69XtYlzMD9lJ3sh7HJCYChG
+admin-paths:
+  paths:
+    -
+      uri: "/usuarios"
+      method: "POST"

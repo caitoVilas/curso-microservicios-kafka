@@ -1,5 +1,6 @@
 package com.caito.api.gateway.apigateway.config;
 
+import com.caito.api.gateway.apigateway.dto.RequestDTO;
 import com.caito.api.gateway.apigateway.dto.TokenDTO;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
@@ -32,6 +33,8 @@ public class AuthFilter extends AbstractGatewayFilterFactory<AuthFilter.Config> 
             return webClient.build()
                     .post()
                     .uri("http://AUTH-SERVICE/auth/validate?token=" + chunks[1])
+                    .bodyValue(new RequestDTO(exchange.getRequest().getPath().toString(),
+                            exchange.getRequest().getMethod().toString()))
                     .retrieve()
                     .bodyToMono(TokenDTO.class)
                     .map(t -> {

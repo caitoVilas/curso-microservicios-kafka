@@ -1,6 +1,8 @@
 package com.caito.authservice.controller;
 
 import com.caito.authservice.dto.AuthUserDTO;
+import com.caito.authservice.dto.NewUserDTO;
+import com.caito.authservice.dto.RequestDTO;
 import com.caito.authservice.dto.TokenDTO;
 import com.caito.authservice.entity.AuthUser;
 import com.caito.authservice.service.AuthService;
@@ -24,15 +26,16 @@ public class AuthController {
     }
 
     @PostMapping("/validate")
-    public ResponseEntity<TokenDTO> validate(@RequestParam String token){
-        TokenDTO tokenDTO = authService.validate(token);
+    public ResponseEntity<TokenDTO> validate(@RequestParam String token,
+                                             @RequestBody RequestDTO requestDTO){
+        TokenDTO tokenDTO = authService.validate(token, requestDTO);
         if (tokenDTO == null)
             return ResponseEntity.badRequest().build();
         return ResponseEntity.ok(tokenDTO);
     }
 
     @PostMapping("/create")
-    public ResponseEntity<AuthUser> create(@RequestBody AuthUserDTO dto){
+    public ResponseEntity<AuthUser> create(@RequestBody NewUserDTO dto){
         AuthUser authUser = authService.create(dto);
         if (authUser == null)
             return ResponseEntity.badRequest().build();
