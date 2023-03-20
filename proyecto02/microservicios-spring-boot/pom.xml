@@ -27,6 +27,7 @@
 
     <modules>
         <module>producto-service</module>
+        <module>order-service</module>
     </modules>
 
 </project>
