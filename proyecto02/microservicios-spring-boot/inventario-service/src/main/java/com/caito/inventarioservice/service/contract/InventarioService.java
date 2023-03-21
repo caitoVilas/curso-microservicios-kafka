@@ -1,5 +1,9 @@
 package com.caito.inventarioservice.service.contract;
 
+import com.caito.inventarioservice.dto.InventarioResponseDTO;
+
+import java.util.List;
+
 public interface InventarioService {
-    boolean buscarPorScu(String codigoSku);
+    List<InventarioResponseDTO> buscarPorScu(List<String> codigoSku);
 }
