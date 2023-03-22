@@ -11,8 +11,6 @@ Rproducto-service/src/main/java/com/caito/productoservice/dto/ProductoNuevoDTO.j
 ^producto-service/src/main/java/com/caito/productoservice/service/contract/ProductoService.java,b\4\b44b70dca301144975e78f973f830ba4961c9fc6
 |
 Lproducto-service/src/main/java/com/caito/productoservice/model/Producto.java,7\1\71b933acffc3dfbb356c645aaf7d6326f931def7
-€
-Pproducto-service/src/main/java/com/caito/productoservice/ProductoController.java,3\2\328d7f2fa2ce65b97372d46a559caf0ae9eab39f
 ‚
 Rorder-service/src/main/java/com/caito/orderservice/repository/OrderRepository.java,7\8\78c173c488be5e4a72a4415a23c3f47bf1add115
 …
@@ -35,14 +33,8 @@ Qorder-service/src/main/java/com/caito/orderservice/dto/InventarioResponseDTO.ja
 Norder-service/src/main/java/com/caito/orderservice/entity/OrderLinesItems.java,d\e\def926e41397415eb6ddeafa89ce0bff285eeb33
 {
 Korder-service/src/main/java/com/caito/orderservice/dto/OrderRequestDTO.java,f\2\f2819cc0a7a0d403b723a61517957a4f6b6e7f35
-‚
-Rorder-service/src/main/java/com/caito/orderservice/controller/OrderController.java,1\2\121534f1132a67fc29a3ef156b1835b089d23c89
 ”
 dinventario-service/src/main/java/com/caito/inventarioservice/service/impl/InventarioServiceImpl.java,a\0\a0e0aabec23aa49b7e177842fbfd009412e5db28
-’
-binventario-service/src/main/java/com/caito/inventarioservice/controller/InventarioConrtroller.java,f\c\fc83ea42fcd698cc4ee9dab84cee98a25941d4a3
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 H
 registry-service/pom.xml,6\3\63bad714dd988b89401a45f83706a84850d6fe83
 ˆ
@@ -53,8 +45,6 @@ E
 ^inventario-service/src/main/java/com/caito/inventarioservice/InventarioServiceApplication.java,4\8\48701daab91c36d837e8dade41b1468a22ac6dde
 
 Oorder-service/src/main/java/com/caito/orderservice/OrderServiceApplication.java,8\0\80dde5b99d14f8d750e8537e88be4570074ce9ea
-J
-inventario-service/pom.xml,a\4\a4205525786e7ca1d96bcc9e9a59b58a3f9d6d18
 H
 producto-service/pom.xml,d\a\da8b3c858ffab8996ecfec3bb7279dcdab2e158e
 ˆ
