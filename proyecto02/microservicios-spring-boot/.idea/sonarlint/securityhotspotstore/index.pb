@@ -35,10 +35,6 @@ Norder-service/src/main/java/com/caito/orderservice/entity/OrderLinesItems.java
 Korder-service/src/main/java/com/caito/orderservice/dto/OrderRequestDTO.java,f\2\f2819cc0a7a0d403b723a61517957a4f6b6e7f35
 ”
 dinventario-service/src/main/java/com/caito/inventarioservice/service/impl/InventarioServiceImpl.java,a\0\a0e0aabec23aa49b7e177842fbfd009412e5db28
-H
-registry-service/pom.xml,6\3\63bad714dd988b89401a45f83706a84850d6fe83
-ˆ
-Xregistry-service/src/main/java/com/caito/registryservice/RegistryServiceApplication.java,f\9\f95728f3e34afaaa739ff59fd1369f0b916a7eae
 Ž
 ^inventario-service/src/main/java/com/caito/inventarioservice/InventarioServiceApplication.java,4\8\48701daab91c36d837e8dade41b1468a22ac6dde
 E
