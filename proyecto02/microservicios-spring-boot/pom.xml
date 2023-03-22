@@ -29,6 +29,7 @@
         <module>producto-service</module>
         <module>order-service</module>
         <module>inventario-service</module>
+        <module>registry-service</module>
     </modules>
 
 </project>

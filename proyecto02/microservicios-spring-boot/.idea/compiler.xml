@@ -7,9 +7,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="order-service" />
         <module name="producto-service" />
         <module name="inventario-service" />
-        <module name="order-service" />
+        <module name="registry-service" />
       </profile>
     </annotationProcessing>
   </component>
@@ -18,6 +19,7 @@
       <module name="inventario-service" options="-parameters" />
       <module name="order-service" options="-parameters" />
       <module name="producto-service" options="-parameters" />
+      <module name="registry-service" options="-parameters" />
     </option>
   </component>
 </project>
