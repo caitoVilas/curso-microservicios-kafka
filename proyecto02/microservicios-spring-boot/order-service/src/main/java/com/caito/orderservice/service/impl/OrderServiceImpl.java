@@ -25,7 +25,7 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private OrderRepository orderRepository;
     @Autowired
-    private WebClient webClient;
+    private WebClient.Builder webClient;
 
 
     @Override
@@ -41,8 +41,8 @@ public class OrderServiceImpl implements OrderService {
         List<String> codigoSku = order.getOrderLinesItems().stream()
                         .map(OrderLinesItems::getCodigoSku)
                                 .collect(Collectors.toList());
-        InventarioResponseDTO[] inventarioArray = webClient.get()
-                        .uri("http://localhost:8082/api/inventario", uriBuilder ->
+        InventarioResponseDTO[] inventarioArray = webClient.build().get()
+                        .uri("http://INVENTARIO-SERVICE/api/inventario", uriBuilder ->
                              uriBuilder.queryParam("codigoSku", codigoSku).build())
                         .retrieve()
                         .bodyToMono(InventarioResponseDTO[].class)
