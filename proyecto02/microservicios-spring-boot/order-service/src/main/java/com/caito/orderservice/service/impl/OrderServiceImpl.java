@@ -7,6 +7,7 @@ import com.caito.orderservice.entity.Order;
 import com.caito.orderservice.entity.OrderLinesItems;
 import com.caito.orderservice.repository.OrderRepository;
 import com.caito.orderservice.service.contract.OrderService;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,9 +30,13 @@ public class OrderServiceImpl implements OrderService {
 
 
     @Override
-    public void placeOrder(OrderRequestDTO dto) {
+    @Transactional(readOnly = true)
+    @SneakyThrows
+    public String placeOrder(OrderRequestDTO dto) {
         log.info("iniciando servicio crear pedidos");
+        Thread.sleep(10000);
         Order order = new Order();
+        log.info("end wait");
         order.setNumeroPedido(UUID.randomUUID().toString());
         List<OrderLinesItems> orderLineItems = dto.getOrderListItems()
                 .stream()
@@ -52,6 +57,7 @@ public class OrderServiceImpl implements OrderService {
                         .allMatch(InventarioResponseDTO::isInStock);
         if (allProductsInStock){
             orderRepository.save(order);
+            return "pedido realizado con exito";
         }else {
             throw new  IllegalArgumentException("El producto no esta en stock");
         }
